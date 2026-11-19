@@ -6,6 +6,11 @@
 #define BACKING_FILE "BACKING_STORE.bin"
 #define OUTPUT_FILE "output.txt"
 
+typedef enum {
+    POLICY_FIFO,
+    POLICY_LRU
+} policy_t;
+
 policy_t tlb_policy;
 FILE *backing = NULL;
 
