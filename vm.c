@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <pthread.h>
+#include <errno.h>
+#include <ctype.h>
 
 #define BACKING_FILE "BACKING_STORE.bin"
 #define OUTPUT_FILE "output.txt"
@@ -75,6 +77,26 @@ void init_state(void) {
     clock_ticks = 0;
 }
 
+int parse_address_line(const char *line, int *out) {
+    char *end;
+
+    errno = 0;
+    long value = strtol(line, &end, 10);
+
+    if (end == line) return -1;          /* no digits at all */
+    if (errno == ERANGE) return -1;      /* overflow */
+
+    while (*end != '\0') {               /* only whitespace may follow */
+        if (!isspace((unsigned char)*end)) return -1;
+        end++;
+    }
+
+    if (value < 0 || value > 65535) return -1;   /* 16-bit address */
+
+    *out = (int)value;
+    return 0;
+}   
+
 int main(int argc, char *argv[]) {
     if(argc != 4) {
         fprintf(stderr, "Usage: %s <address_file> <fifo|lru> <fifo|lru>\n", argv[0]);
@@ -115,7 +137,6 @@ int main(int argc, char *argv[]) {
         int vaddr;
         if (parse_address_line(line, &vaddr) != 0) {
             fprintf(stderr, "Error: invalid address at line %d of %s\n", lineno, argv[1]);
-            /* TODO: close files and exit cleanly */
             return 1;
         }
         translate(vaddr, out);
