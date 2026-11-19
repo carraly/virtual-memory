@@ -11,10 +11,20 @@ typedef enum {
     POLICY_LRU
 } policy_t;
 
-policy_t tlb_policy;
+policy_t page_policy, tlb_policy;
 FILE *backing = NULL;
 
 int num_addresses = 0;
+
+int parse_policy(const char *s, policy_t *p) {
+    if(strcmp(s, "fifo") == 0) {
+        *p = POLICY_FIFO; return 0;
+    }
+    if(strcmp(s, "lru")  == 0){
+        *p = POLICY_LRU;  return 0;
+    }
+    return -1;
+}
 
 int main(int argc, char *argv[]) {
     if(argc != 4) {
