@@ -273,7 +273,7 @@ int main(int argc, char *argv[]) {
 
     backing = fopen(BACKING_FILE, "rb");
     if(!backing) { 
-        perror("Error opening" BACKING_FILE);
+        perror("Error opening " BACKING_FILE);
         fclose(in); return 1;
     }
 
@@ -309,9 +309,22 @@ int main(int argc, char *argv[]) {
         num_addresses++;
     }
 
+    if(num_addresses == 0) {
+        fprintf(stderr, "Error: address file contains no addresses.\n");
+        fclose(in);
+        fclose(backing);
+        fclose(out);
+        return 1;
+    }
+
+    fprintf(out, "Number of Translated Addresses = %d\n", num_addresses);
+    fprintf(out, "Page Faults = %d\n", page_faults);
+    fprintf(out, "Page Fault Rate = %.3f\n", (double)page_faults / num_addresses);
+    fprintf(out, "TLB Hits = %d\n", tlb_hits);
+    fprintf(out, "TLB Hit Rate = %.3f\n", (double)tlb_hits / num_addresses);
+
     fclose(in);
     fclose(backing);
     fclose(out);
-    
     return 0;
 }
