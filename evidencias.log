@@ -1,0 +1,300 @@
+Script started on 2026-11-19 18:16:48-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="98" LINES="10"]
+]0;victor@galaxy-cachyos:~/Projetos/virtual-memory[?2004h
+[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m git clone https://github.com/carraly/virtual-memory.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd Projetos[Kls[Kmake cleanunxz vchlm.tar.xzcd /home/victor/Projetos/deadlock[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[9Pscript -a evidencias.logmake[K clean[2Pfunciona./banker 10 5 7make[Kscript -a evidencias.logexit[K./tests/run_tests.shmake[K cleanls[Kgit clone https://github.com/carraly/deadlock.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd Projetos[Kls[Kcdunxz /home/victor/Documentos/vchlm.tar.xz[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2@gunzip[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake clean[Kscript -a evidencias.logfor i in $(seq 1 100); do ./sync_car | tail -1; done[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmake[Kscript -a evidencias.logpwd[Kwhoami[2Pdatescript -a evidencias.logwhoami[Kscript -a evidencias.logwhoami[K[2Pdate^[[200~script -a evidencias.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K^[[200~script -a evidencias.log[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdate[Kwhoamiscript -a evidencias.logdate[Kwhoami[3Ppwdscript -a evidencias.logpwd[Kwhoami[2Pdate
+[?2004lThu Nov 19 06:17:05 PM -03 2026
+]0;victor@galaxy-cachyos:~/Projetos/virtual-memory[?2004h
+[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m whoami
+[?2004lvictor
+]0;victor@galaxy-cachyos:~/Projetos/virtual-memory[?2004h
+[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m whoami[2Pdategit clone https://github.com/carraly/virtual-memory.git[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd Projetos[Kls[Kmake cleanunxz vchlm.tar.xzcd /home/victor/Projetos/deadlock[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m pwd
+[?2004l/home/victor/Projetos/virtual-memory
+]0;victor@galaxy-cachyos:~/Projetos/virtual-memory[?2004h
+[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m 
+Script done on 2026-11-19 18:36:35-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-23 14:12:28-03:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="98" LINES="10"]
+]0;victor@galaxy-cachyos:~/Projetos/virtual-memory[?2004h
+[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m make le[K[Kclean
+[?2004lrm -f *.o vm output.txt correct.txt
+]0;victor@galaxy-cachyos:~/Projetos/virtual-memory[?2004h
+[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m make
+[?2004lgcc -Wall -Wextra -g -pthread -c vm.c
+gcc -Wall -Wextra -g -pthread -o vm vm.o
+]0;victor@galaxy-cachyos:~/Projetos/virtual-memory[?2004h
+[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m  [K[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [7mmake test ADDRESSES=/home/victor/Documentos/soft6/addresses.txt REFERENCE=[27m[7m/[27m[7mhome/victor/Documentos/soft6/correct.txt[27m[Amake test ADDRESSES=/home/victor/Documentos/soft6/addresses.txt REFERENCE=/home/victor/Documentos/soft6/correct.txt
+[?2004l./tests/run_tests.sh "/home/victor/Documentos/soft6/addresses.txt" "/home/victor/Documentos/soft6/correct.txt"
+== build ==
+  ok   make clean && make builds vm
+== flows ==
+  ok   page=fifo tlb=fifo line count (1000 translations + 5 summary lines)
+  ok   page=fifo tlb=fifo translation line format
+  ok   page=fifo tlb=fifo translated address count
+  ok   page=fifo tlb=fifo summary lines
+  ok   page=fifo tlb=fifo does not write output.txt
+  ok   page=fifo tlb=lru line count (1000 translations + 5 summary lines)
+  ok   page=fifo tlb=lru translation line format
+  ok   page=fifo tlb=lru translated address count
+  ok   page=fifo tlb=lru summary lines
+  ok   page=fifo tlb=lru does not write output.txt
+  ok   page=lru tlb=fifo line count (1000 translations + 5 summary lines)
+  ok   page=lru tlb=fifo translation line format
+  ok   page=lru tlb=fifo translated address count
+  ok   page=lru tlb=fifo summary lines
+  ok   page=lru tlb=fifo does not write output.txt
+  ok   page=lru tlb=lru line count (1000 translations + 5 summary lines)
+  ok   page=lru tlb=lru translation line format
+  ok   page=lru tlb=lru translated address count
+  ok   page=lru tlb=lru summary lines
+  ok   page=lru tlb=lru does not write output.txt
+== reference comparison (lru fifo) ==
+  ok   lru fifo output matches reference
+== error handling ==
+  ok   no arguments is rejected
+  ok   too few arguments is rejected
+  ok   too many arguments is rejected
+  ok   invalid page policy is rejected
+  ok   invalid TLB policy is rejected
+  ok   missing address file is rejected
+  ok   malformed address line is rejected
+  ok   out-of-range address is rejected
+  ok   empty address file is rejected
+
+RESULT: 31 passed, 0 failed
+]0;victor@galaxy-cachyos:~/Projetos/virtual-memory[?2004h
+[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m exit
+[?2004lexit
+
+Script done on 2026-11-23 14:31:21-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-23 14:34:53-03:00 [COMMAND="bash /tmp/opencode/vm_session.sh" <not executed on terminal>]
++ date
+Mon Nov 23 02:34:53 PM -03 2026
++ whoami
+victor
++ pwd
+/home/victor/Projetos/virtual-memory
++ gcc --version
++ head -n 1
+gcc (GCC) 16.2.1 20260810
++ make --version
++ head -n 1
+GNU Make 4.4.1
++ make clean
+rm -f *.o vm output.txt correct.txt
++ make
+gcc -Wall -Wextra -g -pthread -c vm.c
+gcc -Wall -Wextra -g -pthread -o vm vm.o
++ echo '===== SUITE DE VALIDACAO (com gabarito) ====='
+===== SUITE DE VALIDACAO (com gabarito) =====
++ ./tests/run_tests.sh /home/victor/Documentos/soft6/addresses.txt /home/victor/Documentos/soft6/correct.txt
+== build ==
+  ok   make clean && make builds vm
+== flows ==
+  ok   page=fifo tlb=fifo line count (1000 translations + 5 summary lines)
+  ok   page=fifo tlb=fifo translation line format
+  ok   page=fifo tlb=fifo translated address count
+  ok   page=fifo tlb=fifo summary lines
+  ok   page=fifo tlb=fifo does not write output.txt
+  ok   page=fifo tlb=lru line count (1000 translations + 5 summary lines)
+  ok   page=fifo tlb=lru translation line format
+  ok   page=fifo tlb=lru translated address count
+  ok   page=fifo tlb=lru summary lines
+  ok   page=fifo tlb=lru does not write output.txt
+  ok   page=lru tlb=fifo line count (1000 translations + 5 summary lines)
+  ok   page=lru tlb=fifo translation line format
+  ok   page=lru tlb=fifo translated address count
+  ok   page=lru tlb=fifo summary lines
+  ok   page=lru tlb=fifo does not write output.txt
+  ok   page=lru tlb=lru line count (1000 translations + 5 summary lines)
+  ok   page=lru tlb=lru translation line format
+  ok   page=lru tlb=lru translated address count
+  ok   page=lru tlb=lru summary lines
+  ok   page=lru tlb=lru does not write output.txt
+== reference comparison (lru fifo) ==
+  ok   lru fifo output matches reference
+== error handling ==
+  ok   no arguments is rejected
+  ok   too few arguments is rejected
+  ok   too many arguments is rejected
+  ok   invalid page policy is rejected
+  ok   invalid TLB policy is rejected
+  ok   missing address file is rejected
+  ok   malformed address line is rejected
+  ok   out-of-range address is rejected
+  ok   empty address file is rejected
+
+RESULT: 31 passed, 0 failed
++ echo '===== ESTATISTICAS POR COMBINACAO ====='
+===== ESTATISTICAS POR COMBINACAO =====
+++ mktemp -d
++ TMPD=/tmp/tmp.3U1RaeSMLO
++ cp vm /tmp/tmp.3U1RaeSMLO/
++ cp /home/victor/Documentos/soft6/BACKING_STORE.bin /tmp/tmp.3U1RaeSMLO/
++ cp /home/victor/Documentos/soft6/addresses.txt /tmp/tmp.3U1RaeSMLO/
++ cd /tmp/tmp.3U1RaeSMLO
++ for pp in fifo lru
++ for tp in fifo lru
++ echo '### pagina=fifo tlb=fifo'
+### pagina=fifo tlb=fifo
++ ./vm addresses.txt fifo fifo
++ tail -n 5 correct.txt
+Number of Translated Addresses = 1000
+Page Faults = 538
+Page Fault Rate = 0.538
+TLB Hits = 54
+TLB Hit Rate = 0.054
++ md5sum correct.txt
+67019a43a2171026c04c01ee709d10c8  correct.txt
++ for tp in fifo lru
++ echo '### pagina=fifo tlb=lru'
+### pagina=fifo tlb=lru
++ ./vm addresses.txt fifo lru
++ tail -n 5 correct.txt
+Number of Translated Addresses = 1000
+Page Faults = 538
+Page Fault Rate = 0.538
+TLB Hits = 55
+TLB Hit Rate = 0.055
++ md5sum correct.txt
+a289e4e8e203a61ae0e0f9cd15cd02cf  correct.txt
++ for pp in fifo lru
++ for tp in fifo lru
++ echo '### pagina=lru tlb=fifo'
+### pagina=lru tlb=fifo
++ ./vm addresses.txt lru fifo
++ tail -n 5 correct.txt
+Number of Translated Addresses = 1000
+Page Faults = 539
+Page Fault Rate = 0.539
+TLB Hits = 54
+TLB Hit Rate = 0.054
++ md5sum correct.txt
+fe03c40e007bdcca49178ff4d7e805f1  correct.txt
++ for tp in fifo lru
++ echo '### pagina=lru tlb=lru'
+### pagina=lru tlb=lru
++ ./vm addresses.txt lru lru
++ tail -n 5 correct.txt
+Number of Translated Addresses = 1000
+Page Faults = 539
+Page Fault Rate = 0.539
+TLB Hits = 55
+TLB Hit Rate = 0.055
++ md5sum correct.txt
+76d8906b4ef6fcc8ab240958f769c7bc  correct.txt
++ echo '===== COMPARACAO COM O GABARITO (lru fifo) ====='
+===== COMPARACAO COM O GABARITO (lru fifo) =====
++ ./vm addresses.txt lru fifo
++ md5sum correct.txt /home/victor/Documentos/soft6/correct.txt
+fe03c40e007bdcca49178ff4d7e805f1  correct.txt
+fe03c40e007bdcca49178ff4d7e805f1  /home/victor/Documentos/soft6/correct.txt
++ diff correct.txt /home/victor/Documentos/soft6/correct.txt
++ echo 'REFERENCIA IDENTICA'
+REFERENCIA IDENTICA
++ echo '===== CASOS DE ERRO ====='
+===== CASOS DE ERRO =====
++ ./vm
+Usage: ./vm <address_file> <fifo|lru> <fifo|lru>
++ echo rc=1
+rc=1
++ ./vm addresses.txt lru
+Usage: ./vm <address_file> <fifo|lru> <fifo|lru>
++ echo rc=1
+rc=1
++ ./vm addresses.txt xyz fifo
+Error: policies must be 'fifo' or 'lru'.
++ echo rc=1
+rc=1
++ ./vm addresses.txt fifo xyz
+Error: policies must be 'fifo' or 'lru'.
++ echo rc=1
+rc=1
++ ./vm no_such_file.txt fifo fifo
+Error opening address file: No such file or directory
++ echo rc=1
+rc=1
++ printf '12x\n'
++ ./vm bad.txt fifo fifo
+Error: invalid address at line 1 of bad.txt
++ echo rc=1
+rc=1
++ printf '70000\n'
++ ./vm big.txt fifo fifo
+Error: invalid address at line 1 of big.txt
++ echo rc=1
+rc=1
++ :
++ ./vm empty.txt fifo fifo
+Error: address file contains no addresses.
++ echo rc=1
+rc=1
++ cd -
++ rm -rf /tmp/tmp.3U1RaeSMLO
++ echo '===== GIT STATUS ====='
+===== GIT STATUS =====
++ git status --short
+[31m??[m evidencias.log
+[31m??[m tests/
+[31m??[m vm
++ date
+Mon Nov 23 02:34:55 PM -03 2026
+
+Script done on 2026-11-23 14:34:55-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-11-23 12:32:30-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="98" LINES="10"]
+]0;victor@galaxy-cachyos:~/Projetos/virtual-memory[?2004h
+[1;36mvirtual-memory[0m [3;36mmain[0m [36m ? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m ? [1m❯[0m pwdwhoami[3Ppwdwhoami[2Pdatescript -a evidencias.log
+[?2004lScript started, output log file is 'evidencias.log'.
+]0;victor@galaxy-cachyos:~/Projetos/virtual-memory[?2004h
+[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m make le[K[Kclean
+[?2004lrm -f *.o vm output.txt correct.txt
+]0;victor@galaxy-cachyos:~/Projetos/virtual-memory[?2004h
+[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m make
+[?2004lgcc -Wall -Wextra -g -pthread -c vm.c
+gcc -Wall -Wextra -g -pthread -o vm vm.o
+]0;victor@galaxy-cachyos:~/Projetos/virtual-memory[?2004h
+[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m  [K[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [7mmake test ADDRESSES=/home/victor/Documentos/soft6/addresses.txt REFERENCE=[27m[7m/[27m[7mhome/victor/Documentos/soft6/correct.txt[27m[Amake test ADDRESSES=/home/victor/Documentos/soft6/addresses.txt REFERENCE=/home/victor/Documentos/soft6/correct.txt
+[?2004l./tests/run_tests.sh "/home/victor/Documentos/soft6/addresses.txt" "/home/victor/Documentos/soft6/correct.txt"
+== build ==
+  ok   make clean && make builds vm
+== flows ==
+  ok   page=fifo tlb=fifo line count (1000 translations + 5 summary lines)
+  ok   page=fifo tlb=fifo translation line format
+  ok   page=fifo tlb=fifo translated address count
+  ok   page=fifo tlb=fifo summary lines
+  ok   page=fifo tlb=fifo does not write output.txt
+  ok   page=fifo tlb=lru line count (1000 translations + 5 summary lines)
+  ok   page=fifo tlb=lru translation line format
+  ok   page=fifo tlb=lru translated address count
+  ok   page=fifo tlb=lru summary lines
+  ok   page=fifo tlb=lru does not write output.txt
+  ok   page=lru tlb=fifo line count (1000 translations + 5 summary lines)
+  ok   page=lru tlb=fifo translation line format
+  ok   page=lru tlb=fifo translated address count
+  ok   page=lru tlb=fifo summary lines
+  ok   page=lru tlb=fifo does not write output.txt
+  ok   page=lru tlb=lru line count (1000 translations + 5 summary lines)
+  ok   page=lru tlb=lru translation line format
+  ok   page=lru tlb=lru translated address count
+  ok   page=lru tlb=lru summary lines
+  ok   page=lru tlb=lru does not write output.txt
+== reference comparison (lru fifo) ==
+  ok   lru fifo output matches reference
+== error handling ==
+  ok   no arguments is rejected
+  ok   too few arguments is rejected
+  ok   too many arguments is rejected
+  ok   invalid page policy is rejected
+  ok   invalid TLB policy is rejected
+  ok   missing address file is rejected
+  ok   malformed address line is rejected
+  ok   out-of-range address is rejected
+  ok   empty address file is rejected
+
+RESULT: 31 passed, 0 failed
+]0;victor@galaxy-cachyos:~/Projetos/virtual-memory[?2004h
+[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m exit
+[?2004lexit
+Script done.
+]0;victor@galaxy-cachyos:~/Projetos/virtual-memory[?2004h
+[1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m? [1m❯[0m make clean
+[?2004lrm -f *.o vm output.txt correct.txt
+]0;victor@galaxy-cachyos:~/Projetos/virtual-memory[?2004h
+[1;36mvirtual-memory[0m [3;36mmain[0m [36m ? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m ? [1m❯[0m [K[1;36mvirtual-memory[0m [3;36mmain[0m [36m ? [1m❯[0m [1;36mvirtual-memory[0m [3;36mmain[0m [36m ? [
