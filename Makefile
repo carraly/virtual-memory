@@ -1,15 +1,22 @@
-CFLAGS = -Wall -Wextra -g -pthread
+CC      = gcc
+CFLAGS  = -Wall -Wextra -g -pthread
+
+ADDRESSES ?= addresses.txt
+REFERENCE ?=
 
 vm: vm.o
-	gcc $(CFLAGS) -o vm $^
+	$(CC) $(CFLAGS) -o vm $^
 
 %.o: %.c
-	gcc $(CFLAGS) -c $<
+	$(CC) $(CFLAGS) -c $<
 
 run: vm
-	./vm addresses.txt lru fifo
+	./vm $(ADDRESSES) lru fifo
+
+test: vm
+	./tests/run_tests.sh "$(ADDRESSES)" "$(REFERENCE)"
 
 clean:
-	rm -f *.o vm output.txt
+	rm -f *.o vm output.txt correct.txt
 
-.PHONY: run clean
+.PHONY: run test clean

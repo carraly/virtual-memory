@@ -6,7 +6,7 @@
 #include <ctype.h>
 
 #define BACKING_FILE "BACKING_STORE.bin"
-#define OUTPUT_FILE "output.txt"
+#define OUTPUT_FILE "correct.txt"
 #define PAGE_SIZE   256
 #define NUM_PAGES   256
 #define NUM_FRAMES  128
@@ -145,10 +145,19 @@ int tlb_insert(int page, int frame) {
         slot = fifo_tlb_ptr;
         fifo_tlb_ptr = (fifo_tlb_ptr + 1) % TLB_SIZE;
     }else {
-        slot = 0;
-        for(int i = 1; i < TLB_SIZE; i++) {
-            if(tlb[i].last_used < tlb[slot].last_used) {
+        slot = -1;
+        for(int i = 0; i < TLB_SIZE; i++) {
+            if(!tlb[i].valid) {
                 slot = i;
+                break;
+            }
+        }
+        if(slot < 0) {
+            slot = 0;
+            for(int i = 1; i < TLB_SIZE; i++) {
+                if(tlb[i].last_used < tlb[slot].last_used) {
+                    slot = i;
+                }
             }
         }
     }
@@ -167,6 +176,8 @@ void tlb_invalidate_page(int evicted_page) {
             tlb[i].valid = 0;
             tlb[i].page = -1;
             tlb[i].frame = -1;
+            tlb[i].last_used = 0;
+            tlb[i].loaded_at = 0;
         }
     }
 }
