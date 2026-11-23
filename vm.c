@@ -102,13 +102,35 @@ int parse_address_line(const char *line, int *out) {
 } 
 
 int tlb_lookup(int page) {
-    (void)page;
+    for(int i = 0; i < TLB_SIZE; i++) {
+        if(tlb[i].valid && tlb[i].page == page) {
+            return i;
+        }
+    }
     return -1;
 }
 
 int tlb_insert(int page, int frame) {
-    (void)page; (void)frame;
-    return -1;
+    int slot;
+
+    if(tlb_policy == POLICY_FIFO) {
+        slot = fifo_tlb_ptr;
+        fifo_tlb_ptr = (fifo_tlb_ptr + 1) % TLB_SIZE;
+    }else {
+        slot = 0;
+        for(int i = 1; i < TLB_SIZE; i++) {
+            if(tlb[i].last_used < tlb[slot].last_used) {
+                slot = i;
+            }
+        }
+    }
+
+    tlb[slot].valid = 1;
+    tlb[slot].page = page;
+    tlb[slot].frame = frame;
+    tlb[slot].last_used = clock_ticks;
+    tlb[slot].loaded_at = clock_ticks;
+    return slot;
 }
 
 void tlb_invalidate_page(int evicted_page) {
