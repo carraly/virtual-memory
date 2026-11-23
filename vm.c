@@ -45,6 +45,10 @@ int fifo_frame_ptr = 0;
 int fifo_tlb_ptr = 0;
 unsigned long clock_ticks = 0;
 
+signed char physical_mem[NUM_FRAMES][PAGE_SIZE];
+int page_faults = 0;
+int tlb_hits = 0;
+
 int parse_policy(const char *s, policy_t *p) {
     if(strcmp(s, "fifo") == 0) {
         *p = POLICY_FIFO; return 0;
@@ -83,19 +87,90 @@ int parse_address_line(const char *line, int *out) {
     errno = 0;
     long value = strtol(line, &end, 10);
 
-    if (end == line) return -1;          /* no digits at all */
-    if (errno == ERANGE) return -1;      /* overflow */
+    if (end == line) return -1;
+    if (errno == ERANGE) return -1;
 
-    while (*end != '\0') {               /* only whitespace may follow */
+    while (*end != '\0') {
         if (!isspace((unsigned char)*end)) return -1;
         end++;
     }
 
-    if (value < 0 || value > 65535) return -1;   /* 16-bit address */
+    if (value < 0 || value > 65535) return -1;
 
     *out = (int)value;
     return 0;
-}   
+} 
+
+int tlb_lookup(int page) {
+    (void)page;
+    return -1;
+}
+
+int tlb_insert(int page, int frame) {
+    (void)page; (void)frame;
+    return -1;
+}
+
+int get_frame_for_page(void) {
+    if(next_free_frame < NUM_FRAMES) {
+        return next_free_frame++;
+    }
+    return -1;
+}
+
+int handle_page_fault(int page) {
+    int frame = get_frame_for_page();
+    if(frame < 0) {
+        return -1;
+    }
+
+    if(fseek(backing, (long)page * PAGE_SIZE, SEEK_SET) != 0) {
+        return -1;
+    }
+    if(fread(physical_mem[frame], 1, PAGE_SIZE, backing) != PAGE_SIZE) {
+        return -1;
+    }
+
+    page_table[page].valid = 1;
+    page_table[page].frame = frame;
+    frame_to_page[frame] = page;
+    return frame;
+}
+
+int translate(int vaddr, FILE *out) {
+    int page = (vaddr >> 8) & 0xFF;
+    int offset = vaddr & 0xFF;
+    int frame;
+    unsigned long now = ++clock_ticks;
+
+    int slot = tlb_lookup(page);
+
+    if(slot >= 0) {
+        tlb_hits++;
+        frame = tlb[slot].frame;
+        tlb[slot].last_used = now;
+    }else {
+        if(page_table[page].valid) {
+            frame = page_table[page].frame;
+        }else {
+            page_faults++;
+            frame = handle_page_fault(page);
+            if(frame < 0) {
+                fprintf(stderr, "Error: failed to load page %d\n", page);
+                return -1;
+            }
+        }
+        slot = tlb_insert(page, frame);
+    }
+
+    frame_last_used[frame] = now;
+
+    int physical = frame * PAGE_SIZE + offset;
+    int value = physical_mem[frame][offset];
+
+    fprintf(out, "Virtual address: %d TLB: %d Physical address: %d Value: %d\n", vaddr, slot, physical, value);
+    return 0;
+}
 
 int main(int argc, char *argv[]) {
     if(argc != 4) {
