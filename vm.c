@@ -212,9 +212,17 @@ int main(int argc, char *argv[]) {
         int vaddr;
         if (parse_address_line(line, &vaddr) != 0) {
             fprintf(stderr, "Error: invalid address at line %d of %s\n", lineno, argv[1]);
+            fclose(in);
+            fclose(backing);
+            fclose(out);
             return 1;
         }
-        translate(vaddr, out);
+        if(translate(vaddr, out) != 0) {
+            fclose(in);
+            fclose(backing);
+            fclose(out);
+            return 1;
+        }
         num_addresses++;
     }
 
