@@ -111,11 +111,44 @@ int tlb_insert(int page, int frame) {
     return -1;
 }
 
+void tlb_invalidate_page(int evicted_page) {
+    for(int i = 0; i < TLB_SIZE; i++) {
+        if(tlb[i].valid && tlb[i].page == evicted_page) {
+            tlb[i].valid = 0;
+            tlb[i].page = -1;
+            tlb[i].frame = -1;
+        }
+    }
+}
+
 int get_frame_for_page(void) {
     if(next_free_frame < NUM_FRAMES) {
         return next_free_frame++;
     }
-    return -1;
+
+    int victim;
+
+    if(page_policy == POLICY_FIFO) {
+        victim = fifo_frame_ptr;
+        fifo_frame_ptr = (fifo_frame_ptr + 1) % NUM_FRAMES;
+    }else {
+        victim = 0;
+        for(int f = 1; f < NUM_FRAMES; f++) {
+            if(frame_last_used[f] < frame_last_used[victim]) {
+                victim = f;
+            }
+        }
+    }
+
+    int old_page = frame_to_page[victim];
+    if(old_page >= 0) {
+        page_table[old_page].valid = 0;
+        page_table[old_page].frame = -1;
+        tlb_invalidate_page(old_page);
+    }
+    frame_to_page[victim] = -1;
+
+    return victim;
 }
 
 int handle_page_fault(int page) {
