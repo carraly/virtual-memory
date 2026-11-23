@@ -30,6 +30,12 @@ typedef struct {
     unsigned long loaded_at;
 } tlb_entry_t;
 
+typedef struct {
+    int slot;
+    int page;
+    int found;
+} tlb_task_t;
+
 policy_t page_policy, tlb_policy;
 FILE *backing = NULL;
 
@@ -101,11 +107,33 @@ int parse_address_line(const char *line, int *out) {
     return 0;
 } 
 
+void *tlb_search_thread(void *arg) {
+    tlb_task_t *t = (tlb_task_t *)arg;
+    t->found = (tlb[t->slot].valid && tlb[t->slot].page == t->page);
+    return NULL;
+}
+
 int tlb_lookup(int page) {
+    pthread_t threads[TLB_SIZE];
+    tlb_task_t tasks[TLB_SIZE];
+    int created[TLB_SIZE];
+
     for(int i = 0; i < TLB_SIZE; i++) {
-        if(tlb[i].valid && tlb[i].page == page) {
-            return i;
+        tasks[i].slot  = i;
+        tasks[i].page  = page;
+        tasks[i].found = 0;
+        created[i] = (pthread_create(&threads[i], NULL, tlb_search_thread, &tasks[i]) == 0);
+        if(!created[i]) {
+            tlb_search_thread(&tasks[i]);
         }
+    }
+
+    for(int i = 0; i < TLB_SIZE; i++) {
+        if (created[i]) pthread_join(threads[i], NULL);
+    }
+
+    for(int i = 0; i < TLB_SIZE; i++) {
+        if (tasks[i].found) return i;
     }
     return -1;
 }
